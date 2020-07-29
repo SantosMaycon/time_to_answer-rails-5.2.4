@@ -1,0 +1,28 @@
+'pt-BR':
+  activerecord:
+    models:
+      admin: 
+        one: Administrador
+        other: Administradores
+      user: 
+        one: Usuário
+        other: Usuários
+    attributes:
+      admin:
+        id: Código
+        email: Email
+        encrypted_password: Senha criptografada
+        reset_password_token: Redefinir senha do token
+        reset_password_sent_at: Redefinição de senha enviada em
+        remember_created_at: Lembre-se criado em
+        updated_at: Atualizado em
+        created_at: Criado em
+      user:
+        id: Código
+        email: Email
+        encrypted_password: Senha criptografada
+        reset_password_token: Redefinir senha do token
+        reset_password_sent_at: Redefinição de senha enviada em
+        remember_created_at: Lembre-se criado em
+        updated_at: Atualizado em
+        created_at: Criado em
