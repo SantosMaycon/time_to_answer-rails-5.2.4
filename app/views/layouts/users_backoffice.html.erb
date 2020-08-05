@@ -154,9 +154,9 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <%= link_to  destroy_user_session_path, method: :delete do %>
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
+              <% end %>
             </div>
             <!-- /menu footer buttons -->
           </div>
@@ -169,7 +169,9 @@
                   <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
                 <nav class="nav navbar-nav">
-                <ul class=" navbar-right">
+                <%
+=begin%>
+ <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                       <%= image_tag  "img.jpg", alt:"" %>John Doe
@@ -249,7 +251,9 @@
                       </li>
                     </ul>
                   </li>
-                </ul>
+                </ul> 
+<%
+=end%>
               </nav>
             </div>
           </div>
