@@ -7,10 +7,18 @@
       user: 
         one: Usuário
         other: Usuários
+      subject:
+        one: Assunto
+        other: Assuntos
+      question:
+        one: Pergunta
+        other: Perguntas
     attributes:
       admin:
         id: Código
         email: Email
+        password: Senha
+        password_confirmation: Confirmação da Senha
         encrypted_password: Senha criptografada
         reset_password_token: Redefinir senha do token
         reset_password_sent_at: Redefinição de senha enviada em
@@ -20,9 +28,22 @@
       user:
         id: Código
         email: Email
+        password: Senha
+        password_confirmation: Confirmação da Senha
         encrypted_password: Senha criptografada
         reset_password_token: Redefinir senha do token
         reset_password_sent_at: Redefinição de senha enviada em
         remember_created_at: Lembre-se criado em
+        updated_at: Atualizado em
+        created_at: Criado em
+      subject:
+        id: Código
+        description: Descrição
+        updated_at: Atualizado em
+        created_at: Criado em
+      question:
+        id: Código
+        description: Descrição
+        subject_id: Assunto
         updated_at: Atualizado em
         created_at: Criado em

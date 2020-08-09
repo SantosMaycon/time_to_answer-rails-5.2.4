@@ -30,4 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  messages:
+    listing: Listing %{model}
+    editing: Editing %{model}
+    new: New %{model}
+    deleting: Deleting %{model}
+    confirmation: "Are you sure ?"
+    password: Password
+    password_confirmation: Password Confirmation
+  links:
+    submit: Submit
+    reset: Reset
