@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    get 'welcome/index'
-    resources :admins, except: :show
+    get 'welcome/index'  # home
+    resources :admins    # admins crud
+    resources :subjects  # subjects crud
+    resources :questions # questions crud
   end
   devise_for :users
   devise_for :admins

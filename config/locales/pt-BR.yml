@@ -1,0 +1,12 @@
+pt-BR:
+  messages:
+    listing: Listando %{model}
+    editing: Editando %{model}
+    new: Novo %{model}
+    deleting: Deletando %{model}
+    confirmation: Deseja realmente deletar ?
+    password: Senha
+    password_confirmation: Confirmação de Senha
+  links:
+    submit: Enviar
+    reset: Limpar
