@@ -1,0 +1,11 @@
+<div class="nested-fields">
+    <%= f.label :description  %> <br>
+    <%= f.text_field :description %>
+
+    <%= f.check_box :correct %>
+    <%= f.label :correct %>
+    <%= link_to_remove_association f do %>
+        <button type="button" class="btn btn-default btn-outline btn-danger btn-xs">x</button>
+    <% end %>
+</div>
+<br>

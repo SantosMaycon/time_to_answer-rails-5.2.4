@@ -1,5 +1,6 @@
 namespace :dev do
   PASSWORD_DEFAULT = 123456
+  DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
   desc "Defining the default development settings"
   task setup: :environment do
@@ -10,6 +11,8 @@ namespace :dev do
       show_spinner('Adding default admin...') {%x(rails dev:add_default_admin)}
       show_spinner('Adding extra admins...') {%x(rails dev:add_extra_admin)}
       show_spinner('Adding default user...') {%x(rails dev:add_default_user)}
+      show_spinner('Adding subjects...') {%x(rails dev:add_subjects)}
+      show_spinner('Adding questions and answers...') {%x(rails dev:add_questions_and_answers)}
     else
       puts 'You must be in the development environment to use the task!'
     end
@@ -42,6 +45,36 @@ namespace :dev do
       password: PASSWORD_DEFAULT, 
       password_confirmation: PASSWORD_DEFAULT
     )
+  end
+
+  desc "Adding subjects"
+  task add_subjects: :environment do
+      file_name = 'subjects.txt'
+      file_path = File.join(DEFAULT_FILES_PATH, file_name)
+
+      File.open(file_path, 'r').each do |line|
+      Subject.create!(description: line.strip)
+    end
+  end
+
+  desc "Adding questions with answers"
+  task add_questions_and_answers: :environment do
+    Subject.all.each do |subject|
+      rand(1..3).times do |i|
+        params = { question: {
+          description: "#{Faker::Lorem.paragraph} ??",
+          subject: subject,
+          answers_attributes: []
+        }}
+
+        rand(2..4).times do |j|
+          params[:question][:answers_attributes] << { description: Faker::Lorem.sentence, correct: false }
+        end
+        
+        params[:question][:answers_attributes].sample[:correct] = { description: Faker::Lorem.sentence, correct: true }
+        Question.create!(params[:question])
+      end
+    end
   end
 
   private
