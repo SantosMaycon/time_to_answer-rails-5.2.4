@@ -77,6 +77,14 @@ namespace :dev do
     end
   end
 
+  desc "Reset the subject counter"
+  task reset_subject_counter: :environment do
+      Subject.all.each do |subject|
+        Subject.reset_counters(subject.id, :questions)
+      end
+  end
+
+
   private
   def show_spinner(msg)
     spinner = TTY::Spinner.new(":spinner #{msg}", format: :pong)
