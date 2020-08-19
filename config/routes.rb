@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :questions # questions crud
   end
   devise_for :users
-  devise_for :admins
+  devise_for :admins, skip: [:registrations]
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'site/welcome#index'
