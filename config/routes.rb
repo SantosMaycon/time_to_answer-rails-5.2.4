@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'site/welcome#index'
+  get 'backoffice/user', to: 'users_backoffice/welcome#index'
+  get 'backoffice/admin', to: 'admins_backoffice/welcome#index'
 end
